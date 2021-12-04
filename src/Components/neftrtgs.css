@@ -1,0 +1,7 @@
+.nRForm{
+    display: grid;
+    grid-template-columns: 500px;
+}
+h1{
+    padding-top: 30px;
+}

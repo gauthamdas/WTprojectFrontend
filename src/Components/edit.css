@@ -1,0 +1,35 @@
+.refresh{
+    position: absolute;
+    right: 100px;
+    top: 85px;
+}
+.acDetails{
+    display: grid;
+    grid-template-columns: 370px;
+}
+.teleDetails{
+    display: grid;
+    grid-template-columns: 490px;
+    margin-top: 20px;
+}
+.inputCont{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: large;
+    font-weight: bolder;
+    width: 370px;
+    margin: 7px;
+}
+.formInput{
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid black;
+    line-height: 25px;
+    padding-left: 10px;
+    float: right;
+}
+h1{
+    padding-top: 30px;
+}

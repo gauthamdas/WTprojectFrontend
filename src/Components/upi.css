@@ -1,0 +1,7 @@
+.upiForm{
+    display: grid;
+    grid-template-columns: 300px;
+}
+h1{
+    padding-top: 30px;
+}

@@ -1,0 +1,27 @@
+.credit{
+    padding: 10px;
+    margin: 7px;
+    background-color: rgb(195, 255, 195);
+    border: 10px solid rgb(23, 209, 23);
+    border-radius: 30px;
+    
+}
+
+.debit{
+    padding: 10px;
+    margin: 7px;
+    background-color: rgb(250, 217, 156);
+    border: 10px solid orange;
+    border-radius: 30px;
+}
+
+.refresh{
+    position: absolute;
+    right: 100px;
+    top: 85px;
+}
+
+h1{
+    padding-top: 30px;
+    width: 50%;
+}

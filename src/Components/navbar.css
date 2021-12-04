@@ -1,0 +1,88 @@
+.header{
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    position: fixed;
+    background-color: black;
+    color: white;
+    line-height: 8vh;
+    min-width: 1280px;
+    font-size: larger;
+    text-align: center;
+    z-index: 0;
+}
+
+.header div:not(div.transferItems):hover{
+    background-color: rgba(72, 75, 255, 0.931);
+}
+
+.header p:hover {
+    background-color: rgba(72, 75, 255, 0.931);
+}
+
+/* .homeTab {
+    
+}
+.investTab{
+    
+}
+.insureTab{
+    
+}
+.loginTab{
+    
+}
+.editTab{
+    
+} */
+.transferTab{
+    overflow: hidden; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;   
+}
+.transferItems{
+    display: none;
+    color: black;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.transferTab:hover .transferItems {
+    display: block;
+    color: black;
+    background-color: white;
+    width: 307px;
+  }
+.item{
+    font-size: large;
+    color: black;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+}
+.link{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    text-decoration: none;
+}
+
+.message{
+    background: #fde073;
+    text-align: center;
+    line-height: 2.5;
+    border: 5px solid black;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+#message_list{
+    display: grid;
+    position: absolute;
+    grid-template-columns: 300px;
+    bottom: 20px;
+    right: 10px;
+    height: auto;
+}
+
+.dummy{
+display: flex;
+flex-direction: column;
+}
