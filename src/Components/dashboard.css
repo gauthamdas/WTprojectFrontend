@@ -76,7 +76,8 @@
       padding-left: 15px;
       position: relative;
       color: aliceblue;
-      z-index: 999;
+      letter-spacing: 3px;
+      z-index: 2;
     }
     
     .name {
@@ -133,7 +134,7 @@
       border-radius: 55px;
       position: absolute;
       top: 60px;
-      left: 355px;
+      left: 320px;
     }
     @-webkit-keyframes Logo {
         0%{background-position:0% 50%}
@@ -165,7 +166,6 @@
         width: 130px;
         z-index: 22;
         background-repeat: no-repeat;
-        background-image: url('http://jamesdelaney.ie/dev/hologram.png');
         background-position: 50% 50%;
         background-size: cover;
         opacity: 0.5;
@@ -184,3 +184,23 @@
         z-index: 100;
     }
     
+    .logout{
+      margin-top: 20px;
+    background: #ff0000;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 20px 0 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+    }
+
+    .wel{
+      font-size: 20px;
+      margin-left: 30px;
+      font-family: monospace;
+      font-weight: 600;
+      color: #1914ec;
+    }

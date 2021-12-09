@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { getToken } from "../Utils/Common";
+import ref from './ref.png'
 import "./edit.css";
 function Edit() {
   const [loading, setLoading] = useState(false);
@@ -59,7 +60,7 @@ function Edit() {
     console.log(refresh);
     setLoading(true);
     axios
-      .post(`${process.env.REACT_APP_HOST}:4000/users/acdetails`, {
+      .post(`${process.env.REACT_APP_HOST}/users/acdetails`, {
         token: getToken(),
       })
       .then((response) => {
@@ -75,15 +76,19 @@ function Edit() {
     <div>
       <h1>Account Details: </h1>
       <div className="refresh">
-        <input
+        <button className="refr" onClick={() => {
+            setRefresh(refresh + 1);
+          }} ><img src={ref} width="20px" alt="refresh"/></button>
+        {/* <input
           type="button"
-          value="refesh"
+          className="ref"
+          value="refresh"
           onClick={() => {
             setRefresh(refresh + 1);
           }}
-        />
+        /> */}
       </div>
-      {loading ? <span>Loading...</span> : null}
+      {loading ? <div className="loadclass"><span className="loader-11"></span></div> : null}
       <div className="acDetails">
         <form id="acForm">
           <div className="inputCont">
@@ -173,14 +178,15 @@ function Edit() {
                 id="chat_id"
                 value={chatId}
                 disabled
-              /> <br/><br/>
-              <input type="button" value="ReActivate" onClick={()=>{setStatus(false);setTelForm(true);}} />
+              />
+              <input type="button"  className="fBtn" value="ReActivate" onClick={()=>{setStatus(false);setTelForm(true);}} />
             </div>
           ) : (
             <div className="inputCont">
               {" "}
               <input
                 type="button"
+                className="fBtn"
                 value="Get Updates"
                 onClick={() => {
                   setTelForm(true);
@@ -203,7 +209,7 @@ function Edit() {
                 @pesbankbot
               </a>{" "}
               and type command "<b>/updates</b>". Then Enter your Telegram
-              username & Chat ID
+              username & Chat ID <br/>
             </span>
             <div className="inputCont">
               Telegram username:{" "}
@@ -218,13 +224,14 @@ function Edit() {
               Chat ID:{" "}
               <input
                 type="text"
-                className="formInput"
+                className="formInput2"
                 name="chat_id"
                 id="chat_id"
-              />
+              /> <br/>
             </div>
             <input
               type="button"
+              className="fBtn"
               value={teleLoading ? "Loading..." : "Activate"}
               onClick={handleActivation}
             />

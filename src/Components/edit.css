@@ -6,8 +6,20 @@
 .acDetails{
     display: grid;
     grid-template-columns: 370px;
+    padding-left: 20px;
 }
-.teleDetails{
+.fBtn{
+    margin-top: 20px;
+    background: rgb(103, 186, 255);
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+/* .teleDetails{
     display: grid;
     grid-template-columns: 490px;
     margin-top: 20px;
@@ -20,7 +32,7 @@
     width: 370px;
     margin: 7px;
 }
-.formInput{
+/* .formInput{
     display: flex;
     position: relative;
     border-radius: 20px;
@@ -29,7 +41,24 @@
     line-height: 25px;
     padding-left: 10px;
     float: right;
-}
+} */ 
 h1{
     padding-top: 30px;
+}
+
+.formInput2{
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid black;
+    line-height: 25px;
+    padding-left: 10px;
+    float: right;
+    margin-right: 1vh;
+} 
+
+.refr{
+    background: none;
+    border: none;
 }

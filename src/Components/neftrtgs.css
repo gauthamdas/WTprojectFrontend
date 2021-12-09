@@ -1,7 +1,56 @@
-.nRForm{
+.nRForm, .passForm{
     display: grid;
     grid-template-columns: 500px;
+    padding-left: 30px;
 }
 h1{
     padding-top: 30px;
+}
+input.Tpass{
+    width: 100%;
+}
+
+.payN{
+    margin: 20px 10px 0 0;
+    background: #1DA1F2;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 0 30px 0 30px;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #d3d3d3, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+.cancleN{
+    margin-top: 20px;
+    background: #ff0000;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 20px 0 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+.proN{
+    margin-top: 20px;
+    background: rgb(44, 189, 44);
+    height: 40px;
+    width: 50%;
+    margin-left: 120px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+input.payN, input.cancleN{
+    width: 30%;
+}
+input[type=text],input[type=number],input[type=password]{
+    margin-top: 8px;
+    margin-bottom: 15px;
 }

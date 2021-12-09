@@ -4,8 +4,11 @@ import axios from "axios";
 
 import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
+import Insurance from "./Components/Insurance"
 import Home from "./Components/Home";
+import Invest from "./Components/Invest";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 import PrivateRoute from "./Utils/PrivateRoute";
 import PublicRoute from "./Utils/PublicRoute";
 import { getToken, removeUserSession, setUserSession } from "./Utils/Common";
@@ -15,7 +18,7 @@ import Edit from "./Components/Edit";
 import Transactions from "./Components/Transactions";
 import io from 'socket.io-client';
 import Signup from "./Components/Signup";
-const socket = io(`${process.env.REACT_APP_HOST}:4001`);
+const socket = io(`https://socket.gautham.games`);
 function App() {
   const [authLoading, setAuthLoading] = useState(true);
   const [auth, setAuth] = useState(false);
@@ -27,7 +30,7 @@ function App() {
     }
 
     axios
-      .get(`${process.env.REACT_APP_HOST}:4000/verifyToken?token=${token}`)
+      .get(`${process.env.REACT_APP_HOST}/verifyToken?token=${token}`)
       .then((response) => {
         setUserSession(response.data.token, response.data.user);
         setAuthLoading(false);
@@ -52,7 +55,7 @@ function App() {
   }, [auth]);
 
   if (authLoading && getToken()) {
-    return <div className="content">Checking Authentication...</div>;
+    return <div className="loadclass"><span className="loader-11"></span></div>;
   }
 
   return (
@@ -60,12 +63,13 @@ function App() {
       <BrowserRouter>
         <div>
           <Navbar {...{ auth }} soc={socket}/>
+          <Footer />
           <div className="content">
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/invest" component={Home} />
+              <Route path="/invest" component= {Invest}/>
               <Route path="/home" component={Home} />
-              <Route path="/insure" component={Home} />
+              <Route path="/insure" component={Insurance} />
               <Route path="/contact" component={Home} />
               <PublicRoute
                 path="/home"
@@ -91,6 +95,13 @@ function App() {
                 socket={socket}
               />
               <PrivateRoute
+                path="/changepassword"
+                component={Signup}
+                setAuth={setAuth}
+                setAuthLoading={setAuthLoading}
+                socket={socket}
+              />
+              <PrivateRoute
                 path="/upi"
                 component={Upi}
               />
@@ -110,6 +121,7 @@ function App() {
           </div>
         </div>
       </BrowserRouter>
+     
     </div>
   );
 }

@@ -22,13 +22,15 @@ function Dashboard({setAuth: hasAuth, setAuthLoading: hasAuthLoading, Socket: so
 
   //Fetch Balance
   const getBalance = () =>{
-    if (eyeToggle == eo){
-    axios.post(`${process.env.REACT_APP_HOST}:4000/users/fetchBalance`, { token: getToken() }).then(response => {
+    if (eyeToggle === eo){
+    axios.post(`${process.env.REACT_APP_HOST}/users/fetchBalance`, { token: getToken() }).then(response => {
       setBalance("₹ "+response.data.balance);
+      setEyeToggle(ec);
     }).catch(error => {
       console.log(error.response.data.message)
+      setEyeToggle(ec);
     });
-    setEyeToggle(ec);
+
     }else{
       setBalance("₹ X,XX,XXX");
       setEyeToggle(eo);
@@ -46,25 +48,26 @@ function Dashboard({setAuth: hasAuth, setAuthLoading: hasAuthLoading, Socket: so
   return (
     <div>
       <h1>Dashboard</h1> 
-      Welcome {user.name}!<br /><br />
+      <span className="wel">Welcome {user.name}!</span><br /><br />
       <div className="displayBal">
         {/* <span>Balance: </span>{balance}
         <input type="button" value="Fetch Balance" onClick={getBalance} /> */}
-        <div class="card">
-    <span class="title">PES Bank</span>
-    <span class="bank-logo">
+        <div className="card">
+    <span className="title">PES Bank</span>
+    <span className="bank-logo">
 </span>
-    <img class="mc" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MasterCard_logo.png/320px-MasterCard_logo.png"/>
-    <span class="holo-back"></span>
-    <span class="holo"></span>
+    <img className="mc" alt="not found" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MasterCard_logo.png/320px-MasterCard_logo.png"/>
+    <span className="holo-back"></span>
+    <span className="holo"></span>
     <br/>
-    <span class="number">5467 5670 7623 0945</span><br/><br/>
-    <span class="small-type">Available Balance</span><br/><br/>
-    <span class="emboss exp">{balance}</span> <button className="null" onClick={getBalance}><img src={eyeToggle} class="eye"/></button> <br/><br/>
-    <span class="name">{user.name.toUpperCase()}</span>
+    <span className="number">{user.ac_num}</span><br/><br/>
+    {/* {user.ac_num} */}
+    <span className="small-type">Available Balance</span><br/><br/>
+    <span className="emboss exp">{balance}</span> <button className="null" onClick={getBalance}><img alt="not found" src={eyeToggle} className="eye"/></button> <br/><br/>
+    <span className="name">{user.name.toUpperCase()}</span>
   </div>
       </div>
-      <input type="button" onClick={handleLogout} value="Logout" />
+      <input type="button" className="logout" onClick={handleLogout} value="Logout" />
     </div>
   );
 }

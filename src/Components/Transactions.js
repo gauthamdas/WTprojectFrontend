@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState , useEffect } from 'react'
 import { getToken } from '../Utils/Common';
+import ref from './ref.png'
 import './transactions.css'
 
 function Transactions() {
@@ -23,7 +24,7 @@ function Transactions() {
     useEffect(() => {
         console.log(refresh)
         setLoading(true);
-        axios.post(`${process.env.REACT_APP_HOST}:4000/users/history`, { token: getToken() }).then(response => {
+        axios.post(`${process.env.REACT_APP_HOST}/users/history`, { token: getToken() }).then(response => {
             appendHistoryData(response.data.transHistory)
             setLoading(false);
           }).catch(error => {
@@ -33,8 +34,10 @@ function Transactions() {
     },[refresh])
     return (
         <div>
-            <h1>Transaction History</h1><div className="refresh"><input type="button" value="refesh" onClick={()=>{setRefresh(refresh+1)}} /></div>
-            {loading?<span>Loading...</span>:null}
+            <h1>Transaction History</h1><div className="refresh"><button className="refr" onClick={() => {
+            setRefresh(refresh + 1);
+          }} ><img src={ref} width="20px" alt="refresh"/></button></div>
+            {loading?<div className="loadclass"><span className="loader-11"></span></div>:null}
             <div id="log"></div>
         </div>
     )

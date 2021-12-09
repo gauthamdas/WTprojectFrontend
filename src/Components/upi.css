@@ -5,3 +5,55 @@
 h1{
     padding-top: 30px;
 }
+.inputCont{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: large;
+    font-weight: bolder;
+    width: 370px;
+    margin: 7px;
+    font-weight: bold;
+}
+.tab {
+    tab-size: 2;
+}
+
+.payU{
+    margin: 20px 10px 0 0;
+    background: #1DA1F2;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 0 30px 0 30px;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #d3d3d3, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+.cancleU{
+    margin-top: 20px;
+    background: #ff0000;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 20px 0 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+.proU{
+    margin-top: 20px;
+    background: rgb(44, 189, 44);
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+label{
+    font-family: monospace;
+    font-size: large;
+}
